@@ -18,3 +18,4 @@ let exp1 = prompt ("Введите обязательную статью рас�
 appData.expenses.exp1 = prompt ("Во сколько обойдется?", '');
 console.log(exp1);
 console.log(appData.expenses.exp1);
+alert(appData.budget/30);

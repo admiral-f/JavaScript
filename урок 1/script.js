@@ -13,5 +13,7 @@ let appData = {
 
 let exp1 = prompt ("Введите обязательную статью расходов в этом месяце", '');
 appData.expenses.exp1 = prompt ("Во сколько обойдется?", '');
+let exp2 = prompt ("Введите обязательную статью расходов в этом месяце", '');
+appData.expenses.exp2 = prompt ("Во сколько обойдется?", '');
 
 alert("бюджет на 1 день: " + appData.budget/30 + " руб.");

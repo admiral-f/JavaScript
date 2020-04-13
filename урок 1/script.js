@@ -11,9 +11,11 @@ let appData = {
     savings: false
 }
 
-let exp1 = prompt ("Введите обязательную статью расходов в этом месяце", '');
-appData.expenses.exp1 = prompt ("Во сколько обойдется?", '');
-let exp2 = prompt ("Введите обязательную статью расходов в этом месяце", '');
-appData.expenses.exp2 = prompt ("Во сколько обойдется?", '');
+for (let i = 0; i < 2; i++){
+    let exp1 = prompt ("Введите обязательную статью расходов в этом месяце", ''),
+    exp2 = prompt ("Во сколько обойдется?", '');
+    appData.expenses[exp1] = exp2;
+}
 
-alert("бюджет на 1 день: " + appData.budget/30 + " руб.");
+
+alert("бюджет на 1 день: " + appData.budget / 30 + " руб.");

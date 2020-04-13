@@ -1,6 +1,6 @@
 'use strict';
 
-let money = prompt ("Ваш бюджет на месяц?", 'руб');
+let money = +prompt ("Ваш бюджет на месяц?", 'руб');
 let time = prompt("Введите дату в формате YYYY-MM-DD", new Date().toISOString().slice(0, 10));
 
 let appData = {
@@ -21,6 +21,17 @@ for (let i = 0; i < 2; i++){
     }
     
 };
+
 appData.moneyPerDay = appData.budget / 30;
 
 alert("бюджет на 1 день: " + appData.moneyPerDay + " руб.");
+
+if (appData.moneyPerDay < 100){
+    console.log('Минимальный уровень');
+}else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000){
+    console.log('Средний уровень');
+}else if (appData.moneyPerDay > 2000){
+    console.log('Высокий уровень');
+}else {
+    console.log('Error');
+}

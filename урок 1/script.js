@@ -18,7 +18,7 @@ let appData = {
     timeData: time,
     expenses: {},
     optionalExpenses: {},
-    savings: false
+    savings: true
 };
 
 function chooseExpenses(){
@@ -49,3 +49,15 @@ if (appData.moneyPerDay < 100){
 }else {
     console.log('Error');
 }
+
+function checkSavings(){
+    if (appData.savings == true){
+        let save = +prompt ("Какова сумма накоплений?", 'руб'),
+        persent = +prompt ("Под какой процент?", '%');
+
+        appData.monthIncome = save/100/12*persent;
+        alert('Доходы от накоплений в месяц с депозита: ' + appData.monthIncome + ' руб.');
+    }
+}
+
+checkSavings();

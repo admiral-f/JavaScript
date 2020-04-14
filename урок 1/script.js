@@ -1,13 +1,14 @@
 'use strict';
 let money , time;
 
-function start(){
+function start() {
     money = +prompt ("Ваш бюджет на месяц?", 'руб');
     time = prompt("Введите дату в формате YYYY-MM-DD", new Date().toISOString().slice(0, 10));
-    while(isNaN(money) || money == "" money==null ){
+
+    while(isNaN(money) || money == "" || money==null) {
         money = +prompt ("Ваш бюджет на месяц?", 'руб');
     }
-};
+}
 
 start();
 
@@ -35,7 +36,7 @@ function chooseExpenses(){
 
 chooseExpenses();
 
-appData.moneyPerDay = appData.budget / 30;
+appData.moneyPerDay = (appData.budget / 30).toFixed();
 
 alert("бюджет на 1 день: " + appData.moneyPerDay + " руб.");
 

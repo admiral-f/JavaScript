@@ -36,9 +36,7 @@ function chooseExpenses(){
 
 chooseExpenses();
 
-appData.moneyPerDay = (appData.budget / 30).toFixed();
-
-alert("бюджет на 1 день: " + appData.moneyPerDay + " руб.");
+detectDayBudget();
 
 if (appData.moneyPerDay < 100){
     console.log('Минимальный уровень');
@@ -61,3 +59,8 @@ function checkSavings(){
 }
 
 checkSavings();
+
+function detectDayBudget(){
+    appData.moneyPerDay = (appData.budget / 30).toFixed();
+    alert("бюджет на 1 день: " + appData.moneyPerDay + " руб.");
+}

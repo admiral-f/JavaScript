@@ -10,7 +10,7 @@ function start() {
     }
 }
 
-start();
+//start();
 
 
 let appData = {
@@ -34,9 +34,23 @@ function chooseExpenses(){
     }
 }
 
-chooseExpenses();
+// chooseExpenses();
 
-detectDayBudget();
+function chooseOptExpenses(){
+    for (let i = 0; i < 3; i++){
+        let exp1 = prompt ("Статья необязательных расходов?", '');
+        if (typeof(exp1) === 'string' && typeof(exp1) != null
+            && exp1 != '' && exp1.length < 50){
+            console.log('done');
+            appData.optionalExpenses[i+1] = exp1;
+        }
+        
+    }
+}
+
+chooseOptExpenses();
+
+//detectDayBudget();
 
 function detectLevel(){
     if (appData.moneyPerDay < 100){

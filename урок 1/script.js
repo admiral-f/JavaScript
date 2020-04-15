@@ -38,15 +38,19 @@ chooseExpenses();
 
 detectDayBudget();
 
-if (appData.moneyPerDay < 100){
-    console.log('Минимальный уровень');
-}else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000){
-    console.log('Средний уровень');
-}else if (appData.moneyPerDay > 2000){
-    console.log('Высокий уровень');
-}else {
-    console.log('Error');
+function detectLevel(){
+    if (appData.moneyPerDay < 100){
+        console.log('Минимальный уровень');
+    }else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000){
+        console.log('Средний уровень');
+    }else if (appData.moneyPerDay > 2000){
+        console.log('Высокий уровень');
+    }else {
+        console.log('Error');
+    }
 }
+
+detectLevel();
 
 function checkSavings(){
     if (appData.savings == true){

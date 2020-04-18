@@ -10,7 +10,7 @@ function start() {
     }
 }
 
-start();
+//start();
 
 let appData = {
     budget: money,
@@ -74,8 +74,13 @@ let appData = {
                     appData.income = items.split(', ');
                     i++;
                 }
-            //appData.income.push(prompt ('Может быть что-то еще', ''));
+            appData.income.push(prompt ('Может быть что-то еще', ''));
             appData.income.sort();
-        }
+        };
+        let msg = ''
+        appData.income.forEach(function(item, i){
+            msg = msg + (i+1) + ': ' + item + ', ';
+        })
+        alert( 'Способы доп. заборотка: ' + msg );
     }
 };

@@ -66,9 +66,16 @@ let appData = {
         }
     },
     chooseIncome: function() {
-        let items = prompt('Что принесет дополнительный доход? (Перечислите через запятую)', '');
-        appData.income = items.split(', ');
-        appData.income.push(prompt ('Может быть что-то еще', ''));
-        appData.income.sort();
+        let i = 0;
+        while (i < 1){
+            let items = prompt('Что принесет дополнительный доход? (Перечислите через запятую)', '');
+            if (typeof(items) === 'string' && typeof(items) != null && items != ''){
+                    console.log('done');
+                    appData.income = items.split(', ');
+                    i++;
+                }
+            //appData.income.push(prompt ('Может быть что-то еще', ''));
+            appData.income.sort();
+        }
     }
 };

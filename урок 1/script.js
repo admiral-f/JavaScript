@@ -84,3 +84,7 @@ let appData = {
         alert( 'Способы доп. заборотка: ' + msg );
     }
 };
+
+for (var key in appData) {
+    console.log( "Ключ: " + key + " значение: " + appData[key] );
+  };

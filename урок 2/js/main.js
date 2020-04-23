@@ -37,6 +37,9 @@ strBtn.addEventListener('click', function(){
     appData.budget = money;
     appData.timeData = time;
     budget.textContent = money.toFixed();
+    yearValue.value = new Date(Date.parse(time)).getFullYear();
+    monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
+    dayValue.value = new Date(Date.parse(time)).getDate();
 });
 
 let appData = {

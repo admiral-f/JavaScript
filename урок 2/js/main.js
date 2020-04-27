@@ -59,6 +59,14 @@ expensesBtn.addEventListener('click', function() {
     expenses.textContent = sum;
 });
 
+optionalExpensesBtn.addEventListener('click', function() {
+    for (let i = 0; i < optExpensesItem.length; i++){
+        let exp1 = optExpensesItem[i].value;
+        appData.optionalExpenses[i] = exp1;
+        optionalexpenses.textContent += appData.optionalExpenses[i] + ' '; 
+    }
+});
+
 let appData = {
     budget: money,
     timeData: time,
@@ -94,15 +102,7 @@ let appData = {
         }
     },
     chooseOptExpenses: function() {
-        for (let i = 0; i < 3; i++){
-            let exp1 = prompt ("Статья необязательных расходов?", '');
-            if (typeof(exp1) === 'string' && typeof(exp1) != null
-                && exp1 != '' && exp1.length < 50){
-                console.log('done');
-                appData.optionalExpenses[i+1] = exp1;
-            }
-            
-        }
+
     },
     chooseIncome: function() {
         let i = 0;

@@ -88,6 +88,12 @@ countBtn.addEventListener('click', function(){
      
 });
 
+chooseIncome.addEventListener('input', function(){
+    let items = chooseIncome.value;
+    appData.income = items.split(', ');
+    income.textContent = appData.income;
+});
+
 let appData = {
     budget: money,
     timeData: time,
@@ -96,9 +102,6 @@ let appData = {
     income: [],
     savings: true,
 
-    detectLevel: function() {
-
-    },
     checkSavings: function() {
         if (appData.savings == true){
             let save = +prompt ("Какова сумма накоплений?", 'руб'),
@@ -108,25 +111,6 @@ let appData = {
             alert('Доходы от накоплений в месяц с депозита: ' + appData.monthIncome + ' руб.');
         }
     },
-
-    chooseIncome: function() {
-        let i = 0;
-        while (i < 1){
-            let items = prompt('Что принесет дополнительный доход? (Перечислите через запятую)', '');
-            if (typeof(items) === 'string' && typeof(items) != null && items != ''){
-                    console.log('done');
-                    appData.income = items.split(', ');
-                    i++;
-                }
-            appData.income.push(prompt ('Может быть что-то еще', ''));
-            appData.income.sort();
-        };
-        let msg = ''
-        appData.income.forEach(function(item, i){
-            msg = msg + (i+1) + ': ' + item + ', ';
-        })
-        alert( 'Способы доп. заборотка: ' + msg );
-    }
 };
 
 //for (var key in appData) {

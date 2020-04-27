@@ -67,6 +67,27 @@ optionalExpensesBtn.addEventListener('click', function() {
     }
 });
 
+countBtn.addEventListener('click', function(){
+
+    if (appData.budget != undefined){
+        appData.moneyPerDay = (appData.budget / 30).toFixed();
+        daybudget.textContent = appData.moneyPerDay;
+
+        if (appData.moneyPerDay < 100){
+            level.textContent = 'Минимальный уровень достатка(';
+        }else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000){
+            level.textContent = 'Средний уровень достатка...';
+        }else if (appData.moneyPerDay > 2000){
+            level.textContent = 'Высокий уровень достатка!';
+        }else {
+            level.textContent = 'Error';
+        };
+    }else{
+        daybudget.textContent = 'Произошла ошибка';
+    }
+     
+});
+
 let appData = {
     budget: money,
     timeData: time,
@@ -74,23 +95,9 @@ let appData = {
     optionalExpenses: {},
     income: [],
     savings: true,
-    chooseExpenses: function() {
-        
-    },
-    detectDayBudget: function() {
-        appData.moneyPerDay = (appData.budget / 30).toFixed();
-        alert("бюджет на 1 день: " + appData.moneyPerDay + " руб.");
-    },
+
     detectLevel: function() {
-        if (appData.moneyPerDay < 100){
-            console.log('Минимальный уровень');
-        }else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000){
-            console.log('Средний уровень');
-        }else if (appData.moneyPerDay > 2000){
-            console.log('Высокий уровень');
-        }else {
-            console.log('Error');
-        }
+
     },
     checkSavings: function() {
         if (appData.savings == true){
@@ -101,9 +108,7 @@ let appData = {
             alert('Доходы от накоплений в месяц с депозита: ' + appData.monthIncome + ' руб.');
         }
     },
-    chooseOptExpenses: function() {
 
-    },
     chooseIncome: function() {
         let i = 0;
         while (i < 1){

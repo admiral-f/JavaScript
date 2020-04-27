@@ -94,13 +94,24 @@ chooseIncome.addEventListener('input', function(){
     income.textContent = appData.income;
 });
 
+haveSavings.addEventListener('click', function(){
+    if (appData.savings == true){
+        appData.savings = false;
+    }else{
+        appData.savings = true;
+    }
+});
+
+
+
+
 let appData = {
     budget: money,
     timeData: time,
     expenses: {},
     optionalExpenses: {},
     income: [],
-    savings: true,
+    savings: false,
 
     checkSavings: function() {
         if (appData.savings == true){

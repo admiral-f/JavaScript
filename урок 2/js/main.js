@@ -27,7 +27,14 @@ let strBtn = document.querySelector("[id='start']"),
 
 let money , time;
 
+for(let i = 0; i < document.getElementsByTagName("button").length - 1; i++){
+    document.getElementsByTagName("button")[i].disabled = true;
+};
+
 strBtn.addEventListener('click', function(){
+    for(let i = 0; i < document.getElementsByTagName("button").length - 1; i++){
+        document.getElementsByTagName("button")[i].disabled = false;
+    };
     time = prompt("Введите дату в формате YYYY-MM-DD", new Date().toISOString().slice(0, 10));
     money = +prompt ("Ваш бюджет на месяц?", 'руб');
 

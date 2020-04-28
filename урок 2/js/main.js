@@ -56,7 +56,6 @@ expensesBtn.addEventListener('click', function() {
             exp2 = expensesItem[++i].value;
         if (typeof(exp1) === 'string' && typeof(exp1) != null && typeof(exp2) != null
             && exp1 != '' && exp2 != '' && exp1.length < 50){
-            console.log('done');
             appData.expenses[exp1] = exp2;
             sum += +exp2;
         } else {
@@ -77,7 +76,13 @@ optionalExpensesBtn.addEventListener('click', function() {
 countBtn.addEventListener('click', function(){
 
     if (appData.budget != undefined){
-        appData.moneyPerDay = (appData.budget / 30).toFixed();
+        let sum=0;
+
+        for (let i = 0; i < expensesItem.length; i++){
+            sum += +expensesItem[++i].value;
+        };
+        
+        appData.moneyPerDay = ((appData.budget - sum) / 30).toFixed();
         daybudget.textContent = appData.moneyPerDay;
 
         if (appData.moneyPerDay < 100){

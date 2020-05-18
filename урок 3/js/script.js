@@ -15,8 +15,8 @@ window.addEventListener('DOMContentLoaded', function(){
     
     function showTabContent(b){
         if (tabContent[b].classList.contains('hide')){
-            tabContent[i].classList.remove('hide');
-            tabContent[i].classList.add('show');
+            tabContent[b].classList.remove('hide');
+            tabContent[b].classList.add('show');
         }
     }
 
@@ -24,7 +24,11 @@ window.addEventListener('DOMContentLoaded', function(){
         let target = event.target;
         if (target && target.classList.contains('info-header-tab')){
             for (let i = 0; i < tab.length; i++){
-                 
+                 if (target == tab[i]){
+                     hideTabContent(0);
+                     showTabContent(i);
+                     break;
+                 }
             }
         }
     });

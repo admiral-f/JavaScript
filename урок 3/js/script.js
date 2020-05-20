@@ -60,8 +60,19 @@ window.addEventListener('DOMContentLoaded', function(){
 
         function updateClock() {
             let t = getTimeRemaining(endtime);
+
             hours.textContent = t.hours;
+
+            t.minutes = t.minutes + "";
+            if (t.minutes.length == 1) {
+                t.minutes = '0' + t.minutes;
+            }
             minutes.textContent = t.minutes;
+            
+            t.seconds = t.seconds + "";
+            if (t.seconds.length == 1) {
+                t.seconds = '0' + t.seconds;
+            }
             seconds.textContent = t.seconds;
 
             if (t.total <= 0){
